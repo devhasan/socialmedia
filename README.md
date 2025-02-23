@@ -30,3 +30,4 @@ Access using django admin using Pass@Admin password
 
 7. Installation
    Can easily install in local host using pipenv file that ensure all the dependencies.
+8. ER Diagram png included in the directory
