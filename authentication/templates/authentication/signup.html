@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Sign Up {% endblock%}
+
+{% block content %}
+{% load static %}
+
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/bg.jpg' %}">
+    <div class="container">
+        <!-- Page Header Title Start -->
+        <div class="page-header--title pull-left">
+            <h1 class="h1">Checkout</h1>
+        </div>
+        <!-- Page Header Title End -->
+
+        <!-- Page Header Breadcrumb Start -->
+        <div class="page-header--breadcrumb pull-right">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i></a></li>
+                <li class="active">Checkout</li>
+            </ul>
+        </div>
+        <!-- Page Header Breadcrumb End -->
+    </div>
+</div>
+<!-- Page Header Section End -->
+
+
+<!-- Login Section Start -->
+<div id="login" class="pd--100-0">
+    <div class="container">
+        <!-- Login Wrapper Start -->
+        <div class="login--wrapper">
+            <div class="row row--vc">
+                <!-- Login Content Start -->
+                <div class="login--content text-center col-sm-6 col-md-6 pt--100 pb--100">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <!-- Login Logo Start -->
+                            <div class="login--logo">
+                                {% comment %} <img src="{% static 'img/login-img/logo.png' %}" alt="" data-rjs="2"> {% endcomment %}
+                            </div>
+                            <!-- Login Logo End -->
+
+                            <!-- Login Text Start -->
+                            <div class="login--text">
+                                <h2 class="h1">Welcome</h2>
+
+                                <p>Welcome to TriSan IT. Innovation in IT Solutions in your door step. Click and Get
+                                    Ready to use.</p>
+                            </div>
+                            <!-- Login End Start -->
+
+                            <!-- Social Widget Start -->
+                            <div class="social--widget">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Social Widget End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Login Content End -->
+
+                <!-- Login Form Start -->
+                <div class="login--form col-sm-8 col-md-8 pt--50 pb--100" data-form-validation="true">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Checkout Section Start -->
+                            <div id="checkout" class="pd--100-0-40">
+                                <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                                    <!-- Checkout Info Start -->
+                                    <div class="checkout--info">
+                                        <p>Returning Customer? <a href="#" class="checkout--info-toggle">Click Here to
+                                                Login</a></p>
+
+                                        <div class="checkout--info-form" data-form-validation="true">
+                                            <p>If you have shopped with us before, please enter your details in the
+                                                boxes below. If you are a new, please Sign Up first.</p>
+                                            <form action="#" method="post">
+                                               
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-user"></i>
+                                                        </div>
+
+                                                        <input type="text" name="username" class="form-control"
+                                                            placeholder="Username or E-mail" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-unlock"></i>
+                                                        </div>
+
+                                                        <input type="password" name="password" class="form-control"
+                                                            placeholder="Username or E-mail" required>
+                                                    </div>
+                                                </div>
+
+                                                <div class="help-block clearfix">
+                                                    <div class="checkbox pull-left">
+                                                        <label>
+                                                            <input type="checkbox" name="rememberme">
+                                                            <span>Remember me</span>
+                                                        </label>
+                                                    </div>
+
+                                                    <a href="#" class="btn-link pull-right">Forgot Password ?</a>
+                                                </div>
+
+                                                <footer class="clearfix">
+                                                    <button type="submit" class="btn btn-default active pull-left">Login</button>
+                                                    <span class="or">OR</span>
+                                                    <button href="#signup" class="btn btn-default pull-right">Sign Up</button>
+                                                </footer>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <!-- Checkout Info End -->
+
+                                    <!-- Checkout Form Start -->
+                                    <div class="checkout--form" data-form-validation="true" id="signup">
+                                        <form method="POST">
+                                            {% csrf_token %}                                           
+                                            <div class="row pt--80">
+                                                <!-- Checkout Billing Info Start -->
+                                                <div class="checkout--billing-info col-md-12">
+                                                    <h2 class="checkout--form-title h4">Sign Up Form</h2>
+
+                                                    <div class="row">
+                                                        {% for field in form %}                                                          
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                {{field}}
+                                                            </div>
+                                                            <p class="text-danger">{{field.errors.0}}</p>
+                                                        </div>
+                                                        {% endfor %}                                                        
+                                                    </div>
+                                                </div>
+                                                <!-- Checkout Billing Info End -->
+
+                                                <div class="submit-btn-group">
+                                                    <button type="submit" class="btn btn-default">Sign Up</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!-- Checkout Form End -->
+                                </div>
+                            </div>
+                            <!-- Checkout Section End -->
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Login Form End -->
+            </div>
+        </div>
+        <!-- Login Wrapper End -->
+    </div>
+</div>
+<!-- Login Section End -->
+
+
+
+{% endblock %}

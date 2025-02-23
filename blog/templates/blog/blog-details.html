@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Blog Single {% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/bg.jpg' %}">
+    <div class="container">
+        <!-- Page Header Title Start -->
+        <div class="page-header--title pull-left">
+            <h1 class="h1">Blog Single</h1>
+        </div>
+        <!-- Page Header Title End -->
+
+        <!-- Page Header Breadcrumb Start -->
+        <div class="page-header--breadcrumb pull-right">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i></a></li>
+                <li class="active">Blog Single</li>
+            </ul>
+        </div>
+        <!-- Page Header Breadcrumb End -->
+    </div>
+</div>
+<!-- Page Header Section End -->
+
+<!-- Blog Section Start -->
+<div id="blog" class="pd--100-0-40">
+    <div class="container">
+        <div class="row">
+            <!-- Page Content Start -->
+            <div class="page--content col-md-9">
+                <!-- Post Item Start -->
+                <div class="post--item">
+                    <div class="post--header">
+                        <h2 class="post--title">{{post.title}}</h2>
+
+                        <div class="post--meta">
+                            <span>Posted By <a href="#">{{post.author}}</a></span>
+                            <span class="divider">|</span>
+                            <span><a href="#">{{post.publish_at|date:"d M Y"}}</a></span>
+                            <span class="divider">|</span>
+                            <span><a href="#">{{post.category.all.0.name}}</a></span>
+                            
+                            <div class="social--widget pull-right">
+                                <ul>
+                                    <li><a href="{% url 'createpost' %}"><i class="fa fa-plus fa-lg"></i></a></li>  
+                                    {% if user == post.author %}
+                                    <li><a href="{% url 'updatepost' post.id %}"><i class="fa fa-pencil fa-lg"></i></a></li>
+                                    <li><a href="{% url 'deletepost' post.id %}"><i class="fa fa-trash fa-lg"></i></a></li>
+                                    {% endif %}
+                                    <li><a href="{% url 'blog' %}"><i class="fa fa-list fa-lg"></i></a></li>                                
+                                  </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="post--img">
+                        <img src="{{ post.image.url }}" alt="" data-rjs="2">
+                    </div>
+
+                    <div class="post--content">
+                        <p>{{post.content}}</p>                                                
+
+                    </div>
+
+                    <div class="post--footer clearfix">
+                        <!-- Social Widget Start -->
+                        <div class="tags--widget pull-left">
+                            <ul>
+                                <li><span>Tag</span></li>
+                                {% for tag in post.tag.all  %}
+                                <li><a href="#">{{tag.name}}</a></li>
+                                {% endfor %}
+
+                            
+                            </ul>
+                        </div>
+                        <!-- Social Widget End -->
+
+                        <!-- Social Widget Start -->
+                        <div class="social--widget pull-right">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>                                
+                            </ul>
+                        </div>
+                        <!-- Social Widget End -->
+                    </div>
+                </div>
+                <!-- Post Item End -->
+
+                <!-- Pager Start -->
+                <ul class="pager pager-mt">
+                    <li class="next"><a href="#">Newer Post<i class="fa flm fa-long-arrow-right"></i></a></li>
+                    <li class="previous"><a href="#"><i class="fa fm fa-long-arrow-left"></i>Older Post</a></li>
+                </ul>
+                <!-- Pager End -->
+
+                <!-- Comment Items Start -->
+                <div class="comment--items">
+                    <!-- Page Content Title Start -->
+                    <h3 class="page--content-title h4">03 Comments</h3>
+                    <!-- Page Content Title End -->
+
+                    <ul>
+                        <li>
+                            <!-- Comment Item Start -->
+                            <div class="comment--item">
+                                <!-- Comment Meta Start -->
+                                <div class="comment--meta clearfix">
+                                    <div class="comment--meta-img">
+                                        <img src="{% static 'img/blog-img/commenter-01.jpg' %}" alt="" data-rjs="2">
+                                    </div>
+
+                                    <div class="comment--meta-info">
+                                        <h4 class="name h5">Rahi Saiful</h4>
+                                        <p class="date">10 Sep 2017 at 09:30 pm</p>
+                                    </div>
+
+                                    <div class="comment--meta-reply">
+                                        <a href="#commentform">Reply</a>
+                                    </div>
+                                </div>
+                                <!-- Comment Meta End -->
+
+                                <!-- Comment Content Start -->
+                                <div class="comment--content">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable.</p>
+                                </div>
+                                <!-- Comment Content End -->
+                            </div>
+                            <!-- Comment Item End -->
+
+                            <ul>
+                                <li>
+                                    <!-- Comment Item Start -->
+                                    <div class="comment--item">
+                                        <!-- Comment Meta Start -->
+                                        <div class="comment--meta clearfix">
+                                            <div class="comment--meta-img">
+                                                <img src="img/blog-img/commenter-02.jpg" alt="" data-rjs="2">
+                                            </div>
+
+                                            <div class="comment--meta-info">
+                                                <h4 class="name h5">John Doe</h4>
+                                                <p class="date">10 Sep 2017 at 09:30 pm</p>
+                                            </div>
+
+                                            <div class="comment--meta-reply">
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div>
+                                        <!-- Comment Meta End -->
+
+                                        <!-- Comment Content Start -->
+                                        <div class="comment--content">
+                                            <p>Such a great job man!</p>
+                                        </div>
+                                        <!-- Comment Content End -->
+                                    </div>
+                                    <!-- Comment Item End -->
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <!-- Comment Item Start -->
+                            <div class="comment--item">
+                                <!-- Comment Meta Start -->
+                                <div class="comment--meta clearfix">
+                                    <div class="comment--meta-img">
+                                        <img src="img/blog-img/commenter-03.jpg" alt="" data-rjs="2">
+                                    </div>
+
+                                    <div class="comment--meta-info">
+                                        <h4 class="name h5">Jobayer Hossain</h4>
+                                        <p class="date">10 Sep 2017 at 09:30 pm</p>
+                                    </div>
+
+                                    <div class="comment--meta-reply">
+                                        <a href="#">Reply</a>
+                                    </div>
+                                </div>
+                                <!-- Comment Meta End -->
+
+                                <!-- Comment Content Start -->
+                                <div class="comment--content">
+                                    <p>It is a long established fact that a reader will be distracted by the readable
+                                        content of a page when looking at its layout. The point of using Lorem Ipsum is
+                                        that it has a more-or-less normal distribution of letters.</p>
+                                </div>
+                                <!-- Comment Content End -->
+                            </div>
+                            <!-- Comment Item End -->
+                        </li>
+
+                        
+                    </ul>
+                </div>
+                <!-- Comments Items End -->
+
+                <!-- Comment Form Start -->
+                <div class="comment--form" id="commentform">
+                    <!-- Page Content Title Start -->
+                    <h3 class="page--content-title h4">Leave A Comment</h3>
+                    <!-- Page Content Title End -->
+
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="commentFormText">Your Comment *</label>
+                            <textarea name="commentFormText" id="commentFormText" class="form-control"
+                                required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="commentFormName">Name *</label>
+                            <input type="text" name="commentFormName" id="commentFormName" class="form-control"
+                                required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="commentFormEmail">E-mail Address *</label>
+                            <input type="email" name="commentFormEmail" id="commentFormEmail" class="form-control"
+                                required />
+                        </div>
+
+                        <footer class="clearfix">
+                            <button type="submit" class="btn btn-default">Leave Comment</button>
+                            <p class="help-block">Note : Your E-mail address will not publish</p>
+                        </footer>
+                    </form>
+                </div>
+                <!-- Comment Form End -->
+            </div>
+            <!-- Page Content End -->
+
+            <!-- Page Sidebar Start -->
+            {% include "blog/sidebar.html" %}
+            <!-- Page Sidebar End -->
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
+
+
+{% endblock %}

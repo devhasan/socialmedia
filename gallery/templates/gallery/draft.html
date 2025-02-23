@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Gallery {% endblock%}
+
+{% block content %}
+{% load static %}
+
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/page-header-img/bg.jpg' %}">
+    <div class="container">
+        <!-- Page Header Title Start -->
+        <div class="page-header--title pull-left">
+            <h1 class="h1">Portfolio</h1>
+        </div>
+        <!-- Page Header Title End -->
+
+        <!-- Page Header Breadcrumb Start -->
+        <div class="page-header--breadcrumb pull-right">
+            <ul class="breadcrumb">
+                <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                <li class="active">Portfolio</li>
+            </ul>
+        </div>
+        <!-- Page Header Breadcrumb End -->
+    </div>
+</div>
+<!-- Page Header Section End -->
+
+<!-- Portfolio Section Start -->
+<div id="portfolio" class="pd--50-0">
+    <div class="container">
+        <!-- Modal Starts-->
+        <div class="login--form col-sm-8 col-md-8 pb--100" data-form-validation="true">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- Checkout Section Start -->
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Modal Ends-->
+        <!-- Portfolio Filter Nav Start -->
+        <!--<div class="portfolio filter-nav triangle on">
+            <ul>
+                <li class="active"><a href="*" class="btn btn-default">All Projects</a></li>
+                <li><a href="hosting" class="btn btn-default">Hosting</a></li>
+                <li><a href="graphic-design" class="btn btn-default">Graphic Design</a></li>
+                <li><a href="web-design" class="btn btn-default">Web Design</a></li>
+                <li><a href="web-development" class="btn btn-default">Web Development</a></li>
+                <li><a href="seo" class="btn btn-default">SEO</a></li>
+            </ul>
+        </div>-->
+        <!-- Portfolio Filter Nav End -->
+
+        <!-- Portfolio Items Start -->
+        <div class="portfolio--items row col-sm-12 col-md-12">
+            <!-- Portfolio Item Start -->
+            {% if media_files %}
+            {% for media in media_files %}
+            <div class="portfolio--item col-md-4 col-xs-6" data-cat="hosting graphic-design web-design">
+                <a href="{% url 'gallerydetails' media.id %}">
+                    <div class="portfolio--item-img">
+                        <img src="{{media.file.url}}" alt="" data-rjs="2">
+                        <i class="fa fa-link"></i>
+                    </div>
+
+                    <div class="portfolio--item-info">
+                        <h2 class="h4">{{media.title}}</h2>
+                        <p>{{media.description}}</p>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No media files uploaded yet.</p>
+            {% endif %}
+            <!-- Portfolio Item End -->
+
+        </div>
+        <!-- Portfolio Items End -->
+    </div>
+    <!-- Portfolio Footer Start -->
+    <div class="portfolio--footer">
+        <div class="load-more-btn text-center">
+            <a href="#" class="btn btn-default">Load More</a>
+        </div>
+    </div>
+    <!-- Portfolio Footer End -->
+
+</div>
+<!-- Portfolio Section End -->
+
+{% endblock %}

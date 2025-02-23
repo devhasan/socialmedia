@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Create Post {% endblock%}
+
+{% block content %}
+{% load static %}
+
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/page-header-img/bg.jpg' %}">
+    <div class="container">
+        <!-- Page Header Title Start -->
+        <div class="page-header--title pull-left">
+            <h1 class="h1">Create Post</h1>
+        </div>
+        <!-- Page Header Title End -->
+
+        <!-- Page Header Breadcrumb Start -->
+        <div class="page-header--breadcrumb pull-right">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i></a></li>
+                <li class="active">Create Post</li>
+            </ul>
+        </div>
+        <!-- Page Header Breadcrumb End -->
+    </div>
+</div>
+<!-- Page Header Section End -->
+
+<!-- Login Section Start -->
+<div id="login" class="pd--10-0">
+    <div class="container">
+        <!-- Login Wrapper Start -->        
+            <div class="row">                
+                <!-- Login Form Start -->
+                <div class="login--form col-sm-12 col-md-12 pb--100" data-form-validation="true">
+                    <div id="checkout" class="pd--50-0-40">
+                        <div class="container col-sm-12 col-md-12 col-lg-12 col-xs-12">
+                            <!-- Checkout Info Start -->
+
+                            <!-- Checkout Form Start -->
+                            <div class="checkout--form" data-form-validation="true" id="signup">
+                                <form method="POST" enctype="multipart/form-data">
+                                    {% csrf_token %}                                           
+                                    <div class="row pt--80">
+                                        <!-- Checkout Billing Info Start -->
+                                        <div class="checkout--billing-info col-md-12">                                            
+                                                <h2 class="checkout--form-title h4">Create Your Post
+                                                    <a href="{% url 'blog' %}" class="social--widget pull-right"><i class="fa fa-list fa-lg"></i></a>
+                                                </h2>
+  
+                                            <div class="row">
+                                                {% for field in form %}                                                          
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        {{field}}
+                                                    </div>
+                                                    <p class="text-danger">{{field.errors.0}}</p>
+                                                </div>
+                                                {% endfor %}                                                        
+                                            </div>
+                                        </div>
+                                        <!-- Checkout Billing Info End -->
+
+                                        <div class="submit-btn-group">
+                                            <button type="submit" class="btn btn-default pull-right">Post</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- Checkout Form End -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Login Form End -->
+            </div>
+        
+        <!-- Login Wrapper End -->
+    </div>
+</div>
+<!-- Login Section End -->
+
+
+
+{% endblock %}

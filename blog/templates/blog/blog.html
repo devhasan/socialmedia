@@ -1,0 +1,211 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Post {% endblock%}
+
+{% block content %}
+{% load static %}
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/bg.jpg' %}">
+  <div class="container">
+    <!-- Page Header Title Start -->
+    <div class="page-header--title pull-left">
+      <h1 class="h1">Post</h1>
+    </div>
+    <!-- Page Header Title End -->
+
+    <!-- Page Header Breadcrumb Start -->
+    <div class="page-header--breadcrumb pull-right">
+      <ul class="breadcrumb">
+        <li>
+          <a href="{% url 'home' %}"><i class="fa fa-home"></i></a>
+        </li>
+        <li class="active">Post</li>
+      </ul>
+    </div>
+    <!-- Page Header Breadcrumb End -->
+  </div>
+</div>
+<!-- Page Header Section End -->
+
+
+<!-- Blog Section Start -->
+<div id="blog" class="pd--100-0-40">
+  <div class="container">
+    <div class="row">
+      <!-- Page Content Start -->
+      <div class="page--content col-md-9">
+        <!-- Post Items Start -->
+        <div class="post--items row">
+          <!-- Post Item Start -->
+
+          {% with latest=posts|first %}
+          
+          <div class="post--item col-md-6 sticky">
+            <div class="post--header">
+              <h2 class="post--title">
+                <a href="{% url 'blogdetails' latest.id %}">{{ latest.title }}</a>
+              </h2>
+
+              <div class="post--meta">
+                <span>Posted By <a href="#">{{latest.author}}</a></span>
+                <span class="divider">|</span>
+                <span><a href="#">{{latest.publish_at|date:"d M Y"}}</a></span>
+                <span class="divider">|</span>
+                <span><a href="#">{{ latest.category.first.name }}</a></span>
+                <div class="social--widget pull-right">
+                  <ul>
+                    <li><a href="{% url 'createpost' %}"><i class="fa fa-plus fa-lg"></i></a></li>  
+                    <li><a href="{% url 'blog' %}"><i class="fa fa-list fa-lg"></i></a></li>                                
+                  </ul>
+              </div>
+              </div>
+            </div>
+
+            <div class="post--img">
+              {% if latest.image %}
+              <img src="{{latest.image.url}}" alt="" data-rjs="2" />              
+              {% else %}
+              <img src="{% static 'img/blog-img/post-item-01.jpg' %}" alt="" data-rjs="2" />
+              {% endif %}
+              
+            </div>
+
+            <div class="post--summery">
+              <p>{{ latest.content|truncatewords:50 }}</p>
+            </div>
+
+            <div class="post--action">
+              <a href="{% url 'blogdetails' latest.id %}" class="btn btn-default">Continue Reading<i class="fa flm fa-angle-double-right"></i></a>
+            </div>
+
+            <div class="post--footer clearfix">
+              <!-- Social Widget Start -->
+              <div class="tags--widget pull-left">
+                <ul>
+                  <li><span>Tag</span></li>
+                  <li><a href="#">{{latest.tag.first.name}}</a></li>
+                </ul>
+              </div>
+              <!-- Social Widget End -->
+
+              <!-- Social Widget Start -->
+              <div class="social--widget pull-right">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- Social Widget End -->
+            </div>
+          </div>
+          {% endwith %}
+          <!-- Post Item End -->
+
+          <!-- Post Item Start -->
+          {% for post in posts|slice:"1:" %}
+          <div class="post--item col-md-6 col-xs-6 col-xxs-12">
+            <div class="post--header">
+              <h2 class="post--title">
+                <a href="{% url 'blogdetails' post.id %}">{{ post.title|slice:":60"|add:"..." }}</a>
+              </h2>
+
+              <div class="post--meta">
+                <span>By <a href="#">{{post.author}}</a></span>
+                <span class="divider">|</span>
+                <span><a href="#">{{post.publish_at|date:"d M Y"}}</a></span>
+                <span class="divider">|</span>
+                <span><a href="#">{{post.category.first.name}}</a></span>
+                
+              </div>
+            </div>
+
+            <div class="post--img">
+              {% if post.image %}
+              <img class="post-image" src="{{post.image.url}}" alt="" data-rjs="2" />              
+              {% else %}
+              <img src="{% static 'img/blog-img/post-item-01.jpg' %}" alt="" data-rjs="2" />
+              {% endif %}
+            </div>
+
+            <div class="post--summery">
+              <p>{{post.content|slice:":200"|add:"..."}}</p>
+            </div>
+
+            <div class="post--action">
+              <a href="{% url 'blogdetails' post.id %}" class="btn btn-default">Continue Reading<i
+                  class="fa flm fa-angle-double-right"></i></a>
+            </div>
+
+            <div class="post--footer clearfix">
+              <!-- Social Widget Start -->
+              <div class="tags--widget pull-left">
+                <ul>
+                  <li><span>Tag</span></li>
+                  {% for tag in post.tag.all %}
+                  <li><a href="#">{{tag.name}}</a></li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <!-- Social Widget End -->
+
+              <!-- Social Widget Start -->
+              <div class="social--widget pull-right">
+                <ul>
+                  <li>
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- Social Widget End -->
+            </div>
+          </div>
+          {% endfor %}
+          <!-- Post Item End -->
+        </div>
+        <!-- Post Items End -->
+
+        <!-- Pager Start -->
+        <ul class="pager">
+          
+
+
+          <li class="next">
+            {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">Older Post<i class="fa flm fa-long-arrow-right"></i></a>            
+            {% endif %}
+          </li>
+          <li class="previous">
+            {% if posts.has_previous %}
+            <a href="?page={{ posts.previous_page_number }}"><i class="fa fm fa-long-arrow-left"></i>Newer Post</a>
+          
+            {% endif %}
+          </li>
+        </ul>
+        <!-- Pager End -->
+      </div>
+      <!-- Page Content End -->
+
+      <!-- Page Sidebar Start -->
+      {% include "blog/sidebar.html" %}
+      <!-- Page Sidebar End -->
+    </div>
+  </div>
+</div>
+<!-- Blog Section End -->
+
+{% endblock %}

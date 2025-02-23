@@ -1,0 +1,868 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Home {% endblock %}
+
+{% block content %}
+{% load static %}
+
+<!-- Banner Section Start -->
+<div id="banner" class="bg--color-lightgray">
+    <!-- Banner Slider Start -->
+    <div class="banner--slider">
+        <!-- Banner Item Start -->
+        <div class="banner--item" data-bg-img="img/domain-banner-img/slider-bg.jpg">
+            <div class="container">
+                <!-- Domain Search Title Start -->
+                <div class="domain-search--title text-center">
+                    <h1 class="h2">Choose a Domain</h1>
+                    <h2 class="h3">Starting at <span>$01.99</span> Per Year</h2>
+                </div>
+                <!-- Domain Search Title End -->
+
+                <!-- Domain Search Form Start -->
+                <div class="domain-search--form row" data-form-validation="true">
+                    <div class="col-md-10 col-md-offset-1">
+                        <form action="http://billing.ywhmcs.com/domainchecker.php?systpl=GREENSSD" method="post">
+                            <div class="inline-block">
+                                <div class="input-group">
+                                    <span class="input-group-addon">www.</span>
+                                    <input type="text" name="domain" class="form-control"
+                                        placeholder="enter your domain name" required>
+                                    <span class="input-group-addon">
+                                        <select name="ext">
+                                            <option value=".com">.com</option>
+                                            <option value=".net">.net</option>
+                                            <option value=".org">.org</option>
+                                            <option value=".io">.io</option>
+                                        </select>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="inline-block">
+                                <button type="submit" class="btn btn-default active"><i
+                                        class="fa fm fa-search"></i>Search Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Domain Search Form End -->
+            </div>
+        </div>
+        <!-- Banner Item End -->
+    </div>
+</div>
+<!-- Banner Section End -->
+
+<!-- Features Section Start -->
+<div id="features" class="pd--100-0-40">
+    <div class="container">
+        <!-- Section Title Start -->
+        <div class="section--title text-center">
+            <h2 class="h2">Why Choose Us</h2>
+        </div>
+        <!-- Section Title End -->
+
+        <div class="row AdjustRow">
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>01</i>
+
+                <h2 class="h4">Up to 20x Faster Servers</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>02</i>
+
+                <h2 class="h4">Guru Crew Support</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>03</i>
+
+                <h2 class="h4">Data Encryption</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>04</i>
+
+                <h2 class="h4">Data Analysis</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>05</i>
+
+                <h2 class="h4">99.9% Uptime Guarantee</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>06</i>
+
+                <h2 class="h4">Free 24/7 Priority Support</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>07</i>
+
+                <h2 class="h4">Firewall</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+
+            <!-- Feature Item Start -->
+            <div class="feature--item col-md-3 col-xs-6 col-xxs-12">
+                <i>08</i>
+
+                <h2 class="h4">Data Protection</h2>
+
+                <p>Lorem Lorem Ipsum is simply dummy text of the printing and typesetting industry has been since the
+                    1500s.</p>
+            </div>
+            <!-- Feature Item End -->
+        </div>
+    </div>
+</div>
+<!-- Features Section End -->
+
+<!-- Domain Pricing Section Start -->
+<div id="domainPricing" class="pd--100-0-70 bg--color-lightgray">
+    <div class="container">
+        <!-- Section Title Start -->
+        <div class="section--title text-center">
+            <h2 class="h2">Domain Pricing Details</h2>
+        </div>
+        <!-- Section Title End -->
+
+        <!-- Pricing Tab Nav Start -->
+        <div class="pricing--tab-nav triangle--on">
+            <ul>
+                <li class="active"><a href="#domainPricingTab01" class="btn btn-default" data-toggle="tab">Price</a>
+                </li>
+                <li><a href="#domainPricingTab02" class="btn btn-default" data-toggle="tab">Renew</a></li>
+                <li><a href="#domainPricingTab03" class="btn btn-default" data-toggle="tab">Transfer</a></li>
+                <li><a href="#domainPricingTab04" class="btn btn-default" data-toggle="tab">WHOIS Privacy</a></li>
+            </ul>
+        </div>
+        <!-- Pricing Tab Nav End -->
+
+        <!-- Tab Content Start -->
+        <div class="tab-content">
+            <!-- Tab Pane Start -->
+            <div class="tab-pane active" id="domainPricingTab01">
+                <!-- Domain Pricing Items Start -->
+                <div class="domain-pricing--items row">
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.com</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.net</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.org</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.edu</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.army</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.us</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.tv</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.uk</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.int</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.gov</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.co</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.biz</p>
+
+                            <p class="subtitle">$02.99/Year</p>
+
+                            <p>Previous <del>$03.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+                </div>
+                <!-- Domain Pricing Items End -->
+            </div>
+            <!-- Tab Pane End -->
+
+            <!-- Tab Pane Start -->
+            <div class="tab-pane" id="domainPricingTab02">
+                <!-- Domain Pricing Items Start -->
+                <div class="domain-pricing--items row">
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.com</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.net</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.org</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.edu</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.army</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.us</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.tv</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.uk</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.int</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.gov</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.co</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.biz</p>
+
+                            <p class="subtitle">$03.99/Year</p>
+
+                            <p>Previous <del>$04.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+                </div>
+                <!-- Domain Pricing Items End -->
+            </div>
+            <!-- Tab Pane End -->
+
+            <!-- Tab Pane Start -->
+            <div class="tab-pane" id="domainPricingTab03">
+                <!-- Domain Pricing Items Start -->
+                <div class="domain-pricing--items row">
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.com</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.net</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.org</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.edu</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.army</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.us</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.tv</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.uk</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.int</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.gov</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.co</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.biz</p>
+
+                            <p class="subtitle">$04.99/Year</p>
+
+                            <p>Previous <del>$05.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+                </div>
+                <!-- Domain Pricing Items End -->
+            </div>
+            <!-- Tab Pane End -->
+
+            <!-- Tab Pane Start -->
+            <div class="tab-pane" id="domainPricingTab04">
+                <!-- Domain Pricing Items Start -->
+                <div class="domain-pricing--items row">
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.com</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.net</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.org</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.edu</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.army</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.us</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.tv</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.uk</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.int</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.gov</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.co</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+
+                    <div class="col-md-2 col-sm-3 col-xs-6 col-xxs-12">
+                        <!-- Domain Pricing Item Start -->
+                        <div class="domain-pricing--item">
+                            <p class="title">.biz</p>
+
+                            <p class="subtitle">$01.99/Year</p>
+
+                            <p>Previous <del>$02.99/Year</del></p>
+                        </div>
+                        <!-- Domain Pricing Item End -->
+                    </div>
+                </div>
+                <!-- Domain Pricing Items End -->
+            </div>
+            <!-- Tab Pane End -->
+        </div>
+        <!-- Tab Content End -->
+    </div>
+</div>
+<!-- Domain Pricing Section End -->
+
+<!-- Steps Section Start -->
+<div id="steps" class="pd--100-0-40">
+    <div class="container">
+        <!-- Section Title Start -->
+        <div class="section--title text-center">
+            <h2 class="h2">Included In Domain</h2>
+        </div>
+        <!-- Section Title End -->
+
+        <!-- Step Items Start -->
+        <div class="step--items row text-center">
+            <!-- Step Item Start -->
+            <div class="step--item col-sm-4">
+                <div class="step--icon">
+                    <div class="vc--parent">
+                        <div class="vc--child">
+                            <i class="fa fa-balance-scale"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step--content">
+                    <h3 class="h3">DNS Management</h3>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since 1500s</p>
+                </div>
+            </div>
+            <!-- Step Item End -->
+
+            <!-- Step Item Start -->
+            <div class="step--item col-sm-4">
+                <div class="step--icon">
+                    <div class="vc--parent">
+                        <div class="vc--child">
+                            <i class="fa fa-handshake-o"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step--content">
+                    <h3 class="h3">IP Protection</h3>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since 1500s</p>
+                </div>
+            </div>
+            <!-- Step Item End -->
+
+            <!-- Step Item Start -->
+            <div class="step--item col-sm-4">
+                <div class="step--icon">
+                    <div class="vc--parent">
+                        <div class="vc--child">
+                            <i class="fa fa-headphones"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step--content">
+                    <h3 class="h3">E-mail Forwording</h3>
+
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+                        the industry's standard dummy text ever since 1500s</p>
+                </div>
+            </div>
+            <!-- Step Item End -->
+        </div>
+        <!-- Step Items End -->
+    </div>
+</div>
+<!-- Steps Section End -->
+
+{% endblock %}

@@ -1,0 +1,192 @@
+/*
+
+[Theme Color Stylesheet]
+
+Project: GREENSSD - Multipurpose Technology, Hosting Business with WHMCS Template
+Version: 1.7
+Author : themelooks.com
+
+*/
+
+/*------------------------------------*\
+    COLOR
+\*------------------------------------*/
+a:hover, .btn-link:hover,
+a:focus, .btn-link:focus,
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.pagination > li:not(.disabled) > a.prev:hover,
+.pagination > li:not(.disabled) > a.next:hover,
+.pagination > li:not(.disabled) > a.prev:focus,
+.pagination > li:not(.disabled) > a.next:focus,
+.recent-posts-list--widget ul li .content .date,
+.recent-posts--widget li:hover .info .h5,
+.header--nav-links > li.active > a,
+.header--nav-links > li.open > a,
+.header--nav-links > li.open > a:hover,
+.header--nav-links > li.open > a:focus,
+.header--nav-links > .dropdown.megamenu .nav > .dropdown-header,
+.header--nav-links > .dropdown > .dropdown-menu > li.active > a,
+.header--nav-links > .dropdown > .dropdown-menu > li.active > a:hover,
+.header--nav-links > .dropdown > .dropdown-menu > li.active > a:focus,
+.header--nav-links > .dropdown.megamenu .nav > li.active > a,
+.banner--content .h3 strong,
+.banner--offer strong,
+.step--icon .fa,
+.service--item:hover .fa,
+.service--item.active .fa,
+.service--item .h4,
+.service--item:hover .btn-link,
+.service--item.active .btn-link,
+.service--tabs .tab-pane ul li:hover,
+.service--tabs .tab-pane ul li:hover .fa,
+.feature--video-play-btn,
+.portfolio--item:hover .portfolio--item-info,
+.portfolio--item:hover .portfolio--item-info .h4,
+.pricing--price .price-text strong,
+.pricing--price .h4 strong,
+.pricing--features ul li span,
+.vps-pricing--plans li.active,
+.domain-search--title .h3 span,
+.domain-pricing--item .title,
+.ssl-certificate-single .page--content ul li span,
+.datacenter-tabs--widget ul li.active .info,
+.datacenter-tabs--widget ul li.active .info .h4,
+.faq--item .panel-body a,
+.page-header--breadcrumb ul li.active,
+.page--content .video-popup-btn span .fa,
+.product--item:hover .product--item-info .h4 a,
+.product--summery .subtitle span,
+.product--details-tab-nav ul li.active a,
+.review--form .product--rating .br-widget a.br-selected:after,
+.checkout--info > p a:hover,
+.contact--info-item p span,
+.f0f--content p a {
+    color: #e91e63;
+}
+
+/*------------------------------------*\
+    BACKGROUND COLOR
+\*------------------------------------*/
+.bg--color-theme,
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default:active:hover,
+.btn-default:active:focus,
+.btn-default:active.focus,
+.btn-default.active,
+.btn-default.active:hover,
+.btn-default.active:focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default.focus,
+.section--title .h2:after,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li.active > a,
+.pagination > li.active > a:hover,
+.pagination > li.active > a:hover,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+.pagination > li.active > span,
+.pagination > li.active > span:hover,
+.pagination > li.active > span:hover,
+.nav--widget ul li a:hover,
+.nav--widget ul li.active a,
+.tagcloud--widget a,
+.recent-posts--widget .img:before,
+.header--navbar-wrapper:before,
+.service-tab--nav ul li:hover > div,
+.service-tab--nav ul li.active > div,
+.portfolio--item-img:before,
+.portfolio--filter-nav ul li.active a,
+.pricing--tab-nav ul li.active a,
+.pricing--nav-switch .item--bg,
+.vps-pricing--plans li:after,
+.coming-soon-page .search--widget .input-group-addon .btn,
+.post--content blockquote footer:before,
+.product--item-onsale {
+    background-color: #e91e63;
+}
+
+.step--line:before,
+.step--line:after {
+    background-image: -webkit-linear-gradient(left, transparent 60%, #fff 60%), -webkit-linear-gradient(left, #ccc, #e91e63);
+    background-image: linear-gradient(to right, transparent 60%, #fff 60%), linear-gradient(to right, #ccc, #e91e63);
+}
+
+::-moz-selection {
+    background-color: #e91e63;
+}
+::selection {
+    background-color: #e91e63;
+}
+
+/*------------------------------------*\
+    BORDER COLOR
+\*------------------------------------*/
+.form-control:focus,
+.btn-default:hover,
+.btn-default:focus,
+.btn-default.focus,
+.btn-default:active,
+.btn-default:active:hover,
+.btn-default:active:focus,
+.btn-default:active.focus,
+.btn-default.active,
+.btn-default.active:hover,
+.btn-default.active:focus,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default,
+.open > .dropdown-toggle.btn-default:hover,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default.focus,
+.btn-link:hover,
+.btn-link:focus,
+.pagination > li > a:hover,
+.pagination > li > a:focus,
+.pagination > li.active > a,
+.pagination > li.active > a:hover,
+.pagination > li.active > a:hover,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+.pagination > li.active > span,
+.pagination > li.active > span:hover,
+.pagination > li.active > span:hover,
+.tags--widget ul li a:hover,
+.tags--widget ul li a:focus,
+.service--item:hover .btn-link,
+.service--item.active .btn-link,
+.service-tab--nav ul li:hover > div,
+.service-tab--nav ul li.active > div,
+.service--tabs:before,
+.portfolio--filter-nav ul li.active a,
+.pricing--tab-nav ul li.active a,
+.vps-pricing--slider.ui-widget,
+.testimonial--content:before,
+.brand--img:hover,
+.domain-search--form form:before,
+.page--content span.img:before,
+.post--content blockquote:after,
+.coming-soon-page .search--widget .input-group-addon .btn {
+    border-color: #e91e63;
+}
+
+.header--nav-links > li.dropdown > a:after,
+.portfolio--filter-nav.triangle--on ul li.active a:before,
+.pricing--header:before,
+.pricing--tab-nav.triangle--on ul li.active a:before,
+.testimonial--img figure:after {
+    border-top-color: #e91e63;
+}
+
+.footer--menu-wrapper:before {
+    border-right-color: #e91e63;
+}
+.footer--menu-wrapper:after {
+    border-bottom-color: #e91e63;
+}

@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Blog Single {% endblock %}
+
+{% block content %}
+{% load static %}
+
+
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/bg.jpg' %}">
+    <div class="container">
+        <!-- Page Header Title Start -->
+        <div class="page-header--title pull-left">
+            <h1 class="h1">Blog Single</h1>
+        </div>
+        <!-- Page Header Title End -->
+
+        <!-- Page Header Breadcrumb Start -->
+        <div class="page-header--breadcrumb pull-right">
+            <ul class="breadcrumb">
+                <li><a href="{% url 'home' %}"><i class="fa fa-home"></i></a></li>
+                <li class="active">Blog Single</li>
+            </ul>
+        </div>
+        <!-- Page Header Breadcrumb End -->
+    </div>
+</div>
+<!-- Page Header Section End -->
+
+<!-- Blog Section Start -->
+<div id="blog" class="pd--100-0-40">
+    <div class="container">
+        <div class="row">
+            {% include "gallery/sidebar-gallery.html" %}
+            <!-- Page Content Start -->
+            <div class="page--content col-md-9">
+                <!-- Post Item Start -->
+                <div class="post--item">
+                    <div class="post--header">
+                        <h2 class="post--title">{{post.title}}</h2>
+
+                        <div class="post--meta">
+                            <span>Posted By <a href="#">{{post.user}} | {{post.created_at|date:"d M Y"}}</a></span>
+                                                       
+                            <div class="social--widget pull-right">
+                                <ul>
+                                    <li><a href="{% url 'createpost' %}"><i class="fa fa-plus fa-lg"></i></a></li>  
+                                    {% if user == post.user %}
+                                    <li><a href="{% url 'updatepost' post.id %}"><i class="fa fa-pencil fa-lg"></i></a></li>
+                                    <li><a href="{% url 'deletepost' post.id %}"><i class="fa fa-trash fa-lg"></i></a></li>
+                                    {% endif %}
+                                    <li><a href="{% url 'blog' %}"><i class="fa fa-list fa-lg"></i></a></li>                                
+                                  </ul>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="post--img">
+                        <img src="{{ post.file.url }}" alt="" data-rjs="2">
+                    </div>
+
+                    <div class="post--content">
+                        <p>{{post.description}}</p>                                                
+                    </div>
+                    <div class="post--footer clearfix">
+                        <!-- Social Widget Start -->
+                        <div class="tags--widget pull-left">
+                            <ul>
+                                <li class="previous"><a href="#"><i class="fa fm fa-long-arrow-left"></i>Newer Post</a></li>
+                                <li class="next"><a href="#">Older Post <i class="fa flm fa-long-arrow-right"></i></a></li>
+                                
+                            </ul>
+                        </div>
+                        <!-- Social Widget End -->
+                        
+                        <!-- Social Widget Start -->
+                        <div class="social--widget pull-right">
+                            <ul>
+                                <li><a href="#"><span class="badge text-bg-primary">{{ post.view_count }}</span></i></a></li>
+                                {% if is_liked %}
+                                <li><a href="{% url 'like_post' post.id %}"><i class="fa fa-thumbs-up" style="color: #74C0FC;"></i></a></li>
+                                {% else %}
+                                <li><a href="{% url 'like_post' post.id %}"><i class="fa fa-thumbs-up"></i></a></li>
+                                {% endif %}
+                                <li><a href="#"><span class="badge text-bg-primary">{{ like_count }}</span></i></a></li>
+
+                                <li><a href="#"><i class="fa fa-comment"></i></a></li>
+                                <li><a href="#"><i class="fa fa-share"></i></a></li>                                
+                            </ul>
+                        </div>
+                        <!-- Social Widget End -->
+                    </div>
+                </div>
+                <!-- Post Item End -->
+
+                <!-- Pager Start -->
+                <ul class="pager pager-mt">
+                    <li class="next"><a href="#">Newer Post<i class="fa flm fa-long-arrow-right"></i></a></li>
+                    <li class="previous"><a href="#"><i class="fa fm fa-long-arrow-left"></i>Older Post</a></li>
+                </ul>
+                <!-- Pager End -->
+
+                <!-- Comment Items Start -->
+                <div class="comment--items" id="comment">
+                    <!-- Page Content Title Start -->
+                    <h3 class="page--content-title h4">{{comment_count}} Comments</h3>
+                    <!-- Page Content Title End -->
+
+                    <ul>
+                        {% for comment in comments  %}
+                        <li>
+                            <!-- Comment Item Start -->
+                            <div class="comment--item">
+                                <!-- Comment Meta Start -->
+                                <div class="comment--meta clearfix">
+                                    <div class="comment--meta-img">
+                                        <img src="{% static 'img/blog-img/commenter-01.jpg' %}" alt="" data-rjs="2">
+                                    </div>
+
+                                    <div class="comment--meta-info">
+                                        <p class="">{{comment.author}} || {{comment.created_at}}</p>
+                                        {% comment %} <p class="date">{{comment.created_at}}</p> {% endcomment %}
+                                    </div>
+
+                                    <div class="comment--meta-reply">
+                                        <a href="#commentform">Reply</a>
+                                    </div>
+                                </div>
+                                <!-- Comment Meta End -->
+
+                                <!-- Comment Content Start -->
+                                <div class="comment--content">
+                                    <p class="name h5">{{comment.content}}</p>
+                                </div>
+                                <!-- Comment Content End -->
+                            </div>
+                            <!-- Comment Item End -->
+                            
+                        </li>
+                        {% endfor %}                       
+
+                    </ul>
+                </div>
+                <!-- Comments Items End -->
+
+                <!-- Comment Form Start -->
+                <div class="comment--form" id="commentform">
+                    <!-- Page Content Title Start -->
+                    <h3 class="page--content-title h4">Leave A Comment</h3>
+                    <!-- Page Content Title End -->
+                     {% if user.is_authenticated %}
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            {{ comment_form}}
+                        </div>
+                        <footer class="clearfix">
+                            <button type="submit" class="btn btn-default">Leave Comment</button>                            
+                        </footer>
+                    </form>
+                    {% else %}
+                    <p>You must be logged in to Comment..</p>
+                    {% endif %}
+                </div>
+                <!-- Comment Form End -->
+            </div>
+            <!-- Page Content End -->
+
+            <!-- Page Sidebar Start -->
+           
+            <!-- Page Sidebar End -->
+        </div>
+    </div>
+</div>
+<!-- Blog Section End -->
+
+
+{% endblock %}

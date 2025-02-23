@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block title %} {{block.super}} | Gallery {% endblock%}
+
+{% block content %}
+{% load static %}
+<!-- Page Header Section Start -->
+<div id="pageHeader" class="pd--80-0" data-bg-img="{% static 'img/page-header-img/bg.jpg' %}">
+    <div class="container">
+        <!-- Page Header Title Start -->
+        <div class="page-header--title pull-left">
+            <h1 class="h1">Portfolio Single</h1>
+        </div>
+        <!-- Page Header Title End -->
+
+        <!-- Page Header Breadcrumb Start -->
+        <div class="page-header--breadcrumb pull-right">
+            <ul class="breadcrumb">
+                <li><a href="index.html"><i class="fa fa-home"></i></a></li>
+                <li class="active">Portfolio Single</li>
+            </ul>
+        </div>
+        <!-- Page Header Breadcrumb End -->
+    </div>
+</div>
+<!-- Page Header Section End -->
+
+<!-- Page Wrapper Section Start -->
+<div id="pageWrapper" class="pd--100-0-40">
+    <div class="container">
+        <div class="row">
+            <!-- Page Content Start -->
+            <div class="page--content col-md-9">
+                <div class="owl-carousel" data-owl-nav="true">
+                    <img src="{% static 'img/portfolio-single-img/slider-item-01.jpg' %}" alt="" data-rjs="2">
+                    <img src="{% static 'img/portfolio-single-img/slider-item-01.jpg' %}" alt="" data-rjs="2">
+                    <img src="{% static 'img/portfolio-single-img/slider-item-01.jpg' %}" alt="" data-rjs="2">
+                </div>
+
+                <h4>Project Details</h4>
+
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+
+                <blockquote>
+                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a pasIpsum generators on the Internet tend to repeat predefined chunks as necessary</p>
+                </blockquote>
+
+                <h4>Where can I get some?</h4>
+
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
+            </div>
+            <!-- Page Content End -->
+
+            <!-- Page Sidebar Start -->
+            <div class="page--sidebar col-md-3">
+                <!-- Widget Start -->
+                <div class="widget">
+                    <!-- Portfolio Info Widget Start -->
+                    <div class="portfolio-info--widget">
+                        <table class="table">
+                            <tr>
+                                <th>Client</th>
+                                <td>ThemeLooks.com</td>
+                            </tr>
+                            <tr>
+                                <th>Catagory</th>
+                                <td>Technology</td>
+                            </tr>
+                            <tr>
+                                <th>Project Done</th>
+                                <td>19 Jan 2017</td>
+                            </tr>
+                            <tr>
+                                <th>Tag</th>
+                                <td>
+                                    <!-- Tags Widget Start -->
+                                    <div class="tags--widget">
+                                        <ul>
+                                            <li><a href="#">Technology</a></li>
+                                            <li><a href="#">Hosting</a></li>
+                                            <li><a href="#">Domain</a></li>
+                                            <li><a href="#">Website</a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Tags Widget End -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Share</th>
+                                <td>
+                                    <!-- Social Widget Start -->
+                                    <div class="social--widget">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-pinterest-p"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <!-- Social Widget End -->
+                                </td>
+                            </tr>
+                        </table>
+
+                        <a href="#" class="btn btn-default">Visit Website<i class="fa flm fa-angle-double-right"></i></a>
+                    </div>
+                    <!-- Portfolio Info Widget End -->
+                </div>
+                <!-- Widget End -->
+
+                <!-- Widget Start -->
+                <div class="widget">
+                    <!-- Widget Title Start -->
+                    <h2 class="widget--title h5">Related Projects</h2>
+                    <!-- Widget Title End -->
+
+                    <!-- Related Projects Widget Start -->
+                    <div class="related-projects--widget row">
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio--item col-md-12 col-xs-4">
+                            <a href="portfolio-single.html">
+                                <div class="portfolio--item-img">
+                                    <img src="{% static 'img/portfolio-img/portfolio-item-03.jpg' %}" alt="" data-rjs="2">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Portfolio Item End -->
+
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio--item col-md-12 col-xs-4">
+                            <a href="portfolio-single.html">
+                                <div class="portfolio--item-img">
+                                    <img src="{% static 'img/portfolio-img/portfolio-item-03.jpg' %}" alt="" data-rjs="2">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Portfolio Item End -->
+
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio--item col-md-12 col-xs-4">
+                            <a href="portfolio-single.html">
+                                <div class="portfolio--item-img">
+                                    <img src="{% static 'img/portfolio-img/portfolio-item-03.jpg' %}" alt="" data-rjs="2">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Portfolio Item End -->
+                    </div>
+                    <!-- Related Projects Widget End -->
+                </div>
+                <!-- Widget End -->
+            </div>
+            <!-- Page Sidebar End -->
+        </div>
+    </div>
+</div>
+<!-- Page Wrapper Section End -->
+
+{% endblock %}

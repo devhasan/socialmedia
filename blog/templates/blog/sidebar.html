@@ -1,0 +1,151 @@
+{% load static %}
+<!-- Page Sidebar Start -->
+<div class="page--sidebar col-md-3">
+    
+    
+    <div class="widget">
+        <div class="post--footer clearfix">
+            <!-- Social Widget Start -->
+            <div class="tags--widget pull-left">
+              <ul>
+                <li><a href="{% url 'createpost' %}"><i class="fa fa-plus" style="margin-right:5px"></i>Create Post</a></li>
+                <li><a href="{% url 'blog' %}"><i class="fa fa-list fa-lg" style="margin-right:5px"></i>All Post</a></li>
+              </ul>
+            </div>
+            <!-- Social Widget End -->
+          </div>
+    </div>
+
+
+
+    <div class="widget">
+        <div class="post--footer clearfix">
+            <!-- Social Widget Start -->
+                     
+            <!-- Social Widget Start -->
+            <div class="social--widget pull-right">
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                </li>
+          
+              </ul>
+            </div>
+            <!-- Social Widget End -->
+          </div>
+    </div>
+
+
+
+
+
+    <!-- Widget Start -->
+    <div class="widget">
+        <!-- Search Widget Start -->
+        <div class="search--widget" data-form-validation="true">
+            <form action="#">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="I’m Looking For..." required />
+
+                    <div class="input-group-addon">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- Search Widget End -->
+    </div>
+    <!-- Widget End -->
+
+    <!-- Widget Start -->
+    <div class="widget">
+        <!-- Widget Title Start -->
+        <h2 class="widget--title h5">Catagory</h2>
+        <!-- Widget Title End -->
+
+        <!-- Temporary Widget Start -->
+        <div class="widget">
+            <div class="tagcloud--widget">
+                {% for category in categories %}
+                <a href="{% url 'blog' %}?category={{category.name}}">{{category.name}}</a>
+                {% endfor %}
+                </div>
+        </div>
+        <!-- Temporary Widget end -->
+        
+        <!-- Categories Widget Start -->
+        <div class="categories--widget">
+            <form action="">
+            <select onchange="this.form.submit()" name="category">
+                {% for category in categories %}
+                <option value="{{category.name}}">
+                    {{category.name}}
+                </option>
+                {% endfor %}
+            </select>
+        </form>
+        </div>
+
+        <!-- Categories Widget End -->
+    </div>
+    <!-- Widget End -->
+
+    <!-- Widget Start -->
+    <div class="widget">
+        <!-- Widget Title Start -->
+        <h2 class="widget--title h5">Tag</h2>
+        <!-- Widget Title End -->
+
+        <!-- Tagcloud Widget Start -->
+        <div class="tagcloud--widget">
+            {% for tag in tags %}
+            <a href="{% url 'blog' %}?tag={{tag.name}}">{{ tag.name }}</a>
+            {% endfor %}
+        </div>
+        <!-- Tagcloud Widget End -->
+    </div>
+    <!-- Widget End -->
+
+    <!-- Widget Start -->
+    <div class="widget">
+        <!-- Widget Title Start -->
+        <h2 class="widget--title h5">Recent Posts</h2>
+        <!-- Widget Title End -->
+
+        <!-- Recent Posts Widget Start -->
+        <div class="recent-posts--widget">
+            <ul>
+                {% for post in posts %}
+
+                <li>
+                    <a href="{% url 'blogdetails' post.id %}">
+                        <div class="img">
+                            <img src="{% static 'img/blog-img/recent-post-01.jpg' %}" alt="" data-rjs="2" />
+
+                            <div class="figcaption">
+                                <i class="fa fa-link"></i>
+                            </div>
+                        </div>
+
+                        <div class="info">
+                            <h5 class="h5">{{post.title}}</h5>
+                           
+                            <!--<p>{{post.author}}</p>-->                            
+                            <!--<p>{{post.publish_at}}</p>-->
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- Recent Posts Widget End -->
+    </div>
+    <!-- Widget End -->
+</div>
+<!-- Page Sidebar End -->
